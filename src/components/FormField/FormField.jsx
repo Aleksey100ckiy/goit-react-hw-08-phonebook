@@ -5,7 +5,7 @@ import { FormFieldSt } from './FormField.styled'
 
 
 const FormFieldSchema = Yup.object().shape({
-      phone: Yup.number().positive('!!! > 0 !!!').min(2, 'too short!').required('Required'),
+      number: Yup.number().positive('!!! > 0 !!!').min(2, 'too short!').required('Required'),
       name: Yup.string().min(2, 'too short!').required('Required'), 
 });
 
@@ -14,7 +14,7 @@ export const FormField = ({onSubmit, contArr}) =>{
   return (
     <Formik
       initialValues={{
-        phone: '',
+        number: '',
         name: ''
       }}
 
@@ -39,8 +39,8 @@ export const FormField = ({onSubmit, contArr}) =>{
           <ErrorMessage name="name" />
         </FormFieldSt>
         <FormFieldSt>Number
-          <Field id="secName" name="phone" placeholder="Number" />
-          <ErrorMessage name="phone" />
+          <Field id="secName" name="number" placeholder="Number" />
+          <ErrorMessage name="number" />
         </FormFieldSt>
         <button type='submit'>Add contacts</button>
       </Form>

@@ -9,16 +9,16 @@ import { fetchContacts, addContact, deleteContact } from 'redux/contacts/operati
 // import { ContactList } from '../components/ContactList/ContactList' 
 // add from App
 import { FormField } from 'components/FormField/FormField';
-import ContactList from '../components/ContactList/ContactList';
-import FindField from 'components/FindField/FindField';
-import { selectContact, selectFilter } from 'redux/contacts/selectors';
+import  ContactList  from '../components/ContactList/ContactList';
+import  FindField  from 'components/FindField/FindField';
+import { selectContact, selectFilter, selectIsLoading } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/contacts/filterSlice';
 
 
 
 export default function Contacts() {
   const dispatch = useDispatch();
-//   const isLoading = useSelector(selectLoading);
+  // const isLoading = useSelector(selectIsLoading);
 
 
     const contacts = useSelector(selectContact);
@@ -27,17 +27,17 @@ export default function Contacts() {
 
     useEffect(() => {
     dispatch(fetchContacts());
-  }, [dispatch]);
+  }, [dispatch], contacts, filterEl);
     
     const handleSubmit = event => {
     // event.preventDefault();
      dispatch(addContact(event));
      console.log(event);
-    event.resetForm();
+    // event.reset();
     };
     
     const handleFilterChanging = event => {
-    event.preventDefault();
+    // event.preventDefault();
     dispatch(setFilter(event.target.value)) 
     }
     
@@ -57,6 +57,7 @@ export default function Contacts() {
   );
 }
 
+// (filteredContacts) ? filteredContacts : null
 
     // <TaskEditor />
     //   <div>{isLoading && 'Request in progress...'}</div>
