@@ -11,7 +11,7 @@ import { fetchContacts, addContact, deleteContact } from 'redux/contacts/operati
 import { FormField } from 'components/FormField/FormField';
 import  ContactList  from '../components/ContactList/ContactList';
 import  FindField  from 'components/FindField/FindField';
-import { selectContact, selectFilter, selectIsLoading } from 'redux/contacts/selectors';
+import { selectContact, selectFilter, } from 'redux/contacts/selectors';
 import { setFilter } from 'redux/contacts/filterSlice';
 
 
