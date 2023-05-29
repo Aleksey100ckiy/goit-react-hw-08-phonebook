@@ -22,7 +22,7 @@ export const FormField = ({onSubmit, contArr}) =>{
 
       onSubmit={values => {
         for (const contact of contArr) {
-          if( values.name === contact.name){
+          if( values.name.toLocaleLowerCase() === contact.name.toLocaleLowerCase()){
             alert(`${values.name} is already in contacts!`)
             return
         }
