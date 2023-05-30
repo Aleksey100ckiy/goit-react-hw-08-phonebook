@@ -1,7 +1,7 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { nanoid } from 'nanoid';
-import { FormFieldSt } from './FormField.styled'
+import { FormFieldSt, ButtonSt } from './FormField.styled'
 
 
 const FormFieldSchema = Yup.object().shape({
@@ -42,7 +42,7 @@ export const FormField = ({onSubmit, contArr}) =>{
           <Field id="secName" name="number" placeholder="Number" />
           <ErrorMessage name="number" />
         </FormFieldSt>
-        <button type='submit'>Add contacts</button>
+        <ButtonSt type='submit'>Add contacts</ButtonSt>
       </Form>
 
       </Formik>

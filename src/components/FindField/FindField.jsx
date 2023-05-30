@@ -1,8 +1,10 @@
 import React from "react";
+import { InputSt } from "./FindFied.styled";
+
 
 const FindField = ({value ,onChange}) => {
     return (<div>
-        <input type="text" onChange={onChange} value={value} />
+        <InputSt type="text" onChange={onChange} value={value} placeholder="To find contact by name" />
             </div>
         
     );}
